@@ -34,7 +34,7 @@ POST
 
 * username: 사용자 이름 \(string\)
 * email: 사용자 이메일 \(string\)
-* image: 사용자 프로필 이미지 \(이미지 링크\)
+* image: 사용자 프로필 이미지 \(이미지 링크 URI\)
 
 해당 리퀘스트의 바디로 보내는 이름, 이메일, 이미지는 소셜 로그인 api에서 제공하는 정보입니다. 현재는 구글 로그인만 사용하니 해당 사용자의 구글 계정에 설정한 이름, 이메일, 프로필 이미지가 되겠습니다.
 
@@ -50,7 +50,7 @@ POST
 
 ## RESPONSE
 ### success
-**HTTP Status code : 200**
+**HTTP Status code : 200 OK**
 ```json
 {
     "id": 3,
@@ -64,7 +64,7 @@ POST
 * id: 사용자 고유 id \(number\)
 * username: 사용자 이름 \(string\)
 * email: 사용자 이메일 \(string\)
-* image: 사용자 프로필 이미지 \(이미지 링크\)
+* image: 사용자 프로필 이미지 \(이미지 링크 URI\)
 
 리스폰스는 모두 픽미업 데이터베이스에 저장된 정보 기준입니다.
 
