@@ -18,7 +18,7 @@ BODY의 email을 기준으로 사용자 테이블에서 해당 사용자를 찾�
 픽미업 서비스 자체에서 사용자가 원하는 닉네임과 프로필 이미지를 변경할 수 있기 때문에 신규 가입이 아닌 경우 데이터베이스의 내용을 수정하지 않습니다
 {% endhint %}
 
-## METHOD
+## METHOD 
 
 ```text
 POST
@@ -31,10 +31,11 @@ POST
 ```
 
 ## REQUEST BODY
-
-* username: 사용자 이름 \(string\)
-* email: 사용자 이메일 \(string\)
-* image: 사용자 프로필 이미지 \(이미지 링크 URI\)
+|name|type|require|description
+|---|---|---|---|
+|username|string|필수|사용자 이름|
+|email|string|필수|사용자 이메일(중복 불가)|
+|image|string(URI)|선택|사용자 프로필 이미지 경로|
 
 해당 리퀘스트의 바디로 보내는 이름, 이메일, 이미지는 소셜 로그인 api에서 제공하는 정보입니다. 현재는 구글 로그인만 사용하니 해당 사용자의 구글 계정에 설정한 이름, 이메일, 프로필 이미지가 되겠습니다.
 
@@ -61,10 +62,12 @@ POST
 ```
 
 #### REQUEST BODY
-* id: 사용자 고유 id \(number\)
-* username: 사용자 이름 \(string\)
-* email: 사용자 이메일 \(string\)
-* image: 사용자 프로필 이미지 \(이미지 링크 URI\)
+|name|type|description
+|---|---|---|
+|id|number(Long)|사용자 고유 id|
+|username|string|사용자 이름|
+|email|string|사용자 이메일|
+|image|string(URI)|사용자 프로필 이미지 경로|
 
 리스폰스는 모두 픽미업 데이터베이스에 저장된 정보 기준입니다.
 
@@ -79,5 +82,7 @@ POST
 ```
 
 #### REQUEST BODY
-* status : HTTP status code \(number\)
-* message : 에러 메시지 \(string\)  
+|name|type|description|
+|---|---|---|
+|status|number|HTTP status code(에러 상황에 따라 변할 수 있습니다. )|
+|message|string|에러 메시지(메시지 내용은 에러 상황에 따라 변할 수 있습니다. )|
