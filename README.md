@@ -47,6 +47,7 @@ description: 픽미업 프로젝트의 API문서입니다
 ### users
 
 * [유저 정보 불러오기](users/get.md)
+* [유저 프로필 이미지 수정하기](users/update-profile-image.md)
 * [유저 정보 수정하기](users/put.md)
 
 ### tags
