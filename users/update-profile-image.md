@@ -4,10 +4,16 @@ description: 사용자 프로필 이미지를 바꾸는 API입니다.
 
 # 유저 프로필 이미지 수정하기
 
-## METHOD & URL
+## METHOD
 
-```http request
-PATCH /user/:id/image
+```http
+PATCH
+```
+
+## METHOD
+
+```http
+/user/:id/image
 ```
 
 * id: 유저 정보를 수정할 유저의 픽미업 DB에서의 고유 id
