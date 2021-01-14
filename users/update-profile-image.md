@@ -10,7 +10,7 @@ description: 사용자 프로필 이미지를 바꾸는 API입니다.
 PATCH
 ```
 
-## METHOD
+## URL
 
 ```http
 /user/:id/image

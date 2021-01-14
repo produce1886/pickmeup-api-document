@@ -80,7 +80,7 @@ PUT
     "isInterestsPublic": false
 }
 ```
-## Response
+## RESPONSE
 
 ### success
 
