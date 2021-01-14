@@ -20,38 +20,55 @@ GET
 
 ## RESPONSE
 
-* email: 사용자 이메일 \(string\)
-* username: 사용자 이름 \(string\)
-* birth: 사용자 생년월일 \(yyyy-MM-dd 형식\)
-* university: 사용자 대학교 \(string\)
-* major: 사용자 전공 \(string\)
-* region: 사용자 활동 지역 \(string\)
-* introduce: 사용자 간단 자기 소개 \(string\)
-* image: 사용자 프로필 이미지 \(이미지 링크 혹은 base64 인코딩된 문자열\)
-* interests: 사용자 관심분야 \(string\)
-* isBirthPublic: 생년월일 공개 여부 \(boolean\)
-* isUniversityPublic: 대학 공개 여부 \(boolean\)
-* isRegionPublic: 활동 지역 공개 여부 \(boolean\)
-* isInterestsPublic: 관심 분야 공개 여부 \(boolean\)
+|name|type|description|
+|---|---|---|
+|email|string|사용자 이메일|
+|username|string|사용자 이름|
+|image|string(URI)|사용자 프로필 이미지 경로|
+|introduce|string|사용자 간단 자기 소개|
+|birth|date \(yyyy-MM-dd 형식\)|사용자 생년월일|
+|university|string|사용자 대학교|
+|major|string|사용자 전공|
+|region|string|사용자 활동 지역|
+|interests|string|사용자 관심분야|
+|birthPublic|boolean|사용자 생년월일 공개 여부|
+|universityPublic|boolean|사용자 대학 공개 여부|
+|regionPublic|boolean|사용자 활동 지역 공개 여부|
+|interestsPublic|boolean|사용자 관심 분야 공개 여부|
 
 ### RESPONSE EXAMPLE
 
-```markup
+### success
+
+**HTTP Status code: 200 OK**
+
+```json
 {
-    "email": "example@gmail.com",
+    "email": "example2@gmail.com",
     "username": "화연",
-    "birth": null,
+    "image": "",
+    "introduce": "안녕하세요!",
+    "birth": "2020-01-01",
     "university": "이화여자대학교",
     "major": null,
     "region": "부산",
-    "introduce": "안녕하세요!",
-    "image": "",
     "interests": null,
-    "isBirthPublic": false,
-    "isUniversityPublic": true,
-    "isRegionPublic": false,
-    "isInterestsPublic": false
+    "birthPublic": true,
+    "universityPublic": true,
+    "regionPublic": false,
+    "interestsPublic": false
 }
+```
+
+### fail
+
+**HTTP Status code: 400 Bad Request**
+
+```json
+{
+     "status": "BAD_REQUEST",
+     "message": "존재하지 않는 계정입니다. "
+ }
 ```
 
 
