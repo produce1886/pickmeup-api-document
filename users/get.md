@@ -13,7 +13,7 @@ GET
 ## URL
 
 ```text
-/users/:id
+/user/:id
 ```
 
 * id: 유저 정보를 불러올 유저의 픽미업 DB에서의 고유 id
@@ -47,10 +47,10 @@ GET
     "introduce": "안녕하세요!",
     "image": "",
     "interests": null,
-    "isBirthPublic": null,
+    "isBirthPublic": false,
     "isUniversityPublic": true,
     "isRegionPublic": false,
-    "isInterestsPublic": null
+    "isInterestsPublic": false
 }
 ```
 
