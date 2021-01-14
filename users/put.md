@@ -59,3 +59,9 @@ boolean type은 false를 기본값으로 합니다.
 }
 ```
 
+## Response
+
+### success
+
+**HTTP Status code: 204 No Content**
+
