@@ -37,6 +37,8 @@ PUT
 
 사용자가 정보를 입력한 적이 없으면 null이 기본값입니다.
 
+boolean type은 false를 기본값으로 합니다.
+
 ### REQUEST BODY EXAMPLE
 
 ```markup
@@ -50,14 +52,10 @@ PUT
     "introduce": "안녕하세요!",
     "image": "",
     "interests": null,
-    "isBirthPublic": null,
+    "isBirthPublic": false,
     "isUniversityPublic": true,
     "isRegionPublic": false,
-    "isInterestsPublic": null
+    "isInterestsPublic": false
 }
 ```
-
-
-
-
 
