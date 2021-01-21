@@ -128,7 +128,7 @@ GET
 
 ```json
 {
-    "status": "BAD_REQUEST",
+    "status": 400,
     "message": "존재하지 않는 계정입니다. "
 }
 ```
