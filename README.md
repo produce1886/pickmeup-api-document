@@ -18,7 +18,6 @@ description: 픽미업 프로젝트의 API문서입니다
   * [게시물 수정](projects/posting/put.md)
   * [게시물 삭제](projects/posting/delete.md)
   * [게시물 목록 불러오기](projects/posting/list.md)
-  * [유저의 프로젝트 게시물 불러오기](projects/posting/user_projects.md)
 * [댓글](projects/comments/)
   * [댓글 생성](projects/comments/post.md)
   * [댓글 읽기](projects/comments/get.md)
@@ -49,6 +48,7 @@ description: 픽미업 프로젝트의 API문서입니다
 * [유저 정보 불러오기](users/get.md)
 * [유저 프로필 이미지 수정하기](users/update-profile-image.md)
 * [유저 정보 수정하기](users/put.md)
+* [유저의 프로젝트 게시물 불러오기](users/user_projects.md)
 
 ### tags
 
