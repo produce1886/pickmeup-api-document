@@ -62,7 +62,7 @@ POST
 }
 ```
 
-#### REQUEST BODY
+#### RESPONSE BODY
 |name|type|description
 |---|---|---|
 |id|number(Long)|사용자 고유 id|
