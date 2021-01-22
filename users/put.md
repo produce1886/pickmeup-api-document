@@ -94,7 +94,7 @@ PUT
 
 ```json
 {
-    "status": 400",
+    "status": 400,
     "message": "필수항목을 입력해주세요. "
 }
 ```
