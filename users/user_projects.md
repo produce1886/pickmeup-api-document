@@ -31,7 +31,7 @@ GET
 |---|---|---|
 |id|number|게시물 고유 id|
 |title|string|게시물 제목|
-|content|string|게시물 내|
+|content|string|게시물 내용|
 |category|string|카테고리|
 |recruitmentField|string|구인분야|
 |region|string|지역|
@@ -52,7 +52,7 @@ GET
 
 * `user`: 게시물 작성자 정보\(object\)
 
-|name|type|description
+|name|type|description |
 |---|---|---|
 |id|number(Long)|사용자 고유 id|
 |username|string|사용자 이름|
