@@ -68,49 +68,49 @@ GET
     "totalNum": 2,
     "portfolioList": [
         {
-            "id": 123,
+            "id": 1,
             "title": "example",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit.",
-            "category": "게임",
-            "recruitmentField": "기획",
-            "portfolioTag": [],
-            "createdDate": "2021-01-07T14:49:52",
-            "modifiedDate": "2021-01-08T14:05:43",
-            "user": {
-                "id": 2,
-                "email": "example@gmail.com",
-                "username": "홍길동",
-                "image": "https://example/photo.jpg"
-            },
-            "viewNum": 15,
-            "commentsNum": 2
-        },
-        {
-            "id": 124,
-            "title": "example2",
-            "content": "PICK ME UP PLEASE",
+            "content": "주요내용",
             "category": "웹",
-            "recruitmentField": "개발",
+            "recruitmentField": "기획",
+            "createdDate": "2021-01-23T04:34:35",
+            "modifiedDate": "2021-01-23T04:43:13",
             "portfolioTag": [
-                {
-                    "id": 1,
-                    "tag": "리액트"
-                },
-                {
-                    "id": 2,
-                    "tag": "reactjs"
-                }
+            {
+            "id": 2,
+            "tagName": "두번째 태그"
+            },
+            {
+            "id": 3,
+            "tagName": "세번째 태그"
+            }
             ],
-            "createdDate": "2021-01-08T14:49:52",
-            "modifiedDate": "2021-01-09T14:05:43",
             "user": {
-                "id": 2,
-                "email": "example@gmail.com",
+                "id": 3,
                 "username": "홍길동",
+                "email": "example@gmail.com",
                 "image": "https://example/photo.jpg"
             },
-            "viewNum": 121,
-            "commentsNum": 7
+            "viewNum": 0,
+            "commentsNum": 0
+            },
+            {
+            "id": 2,
+            "title": "example2",
+            "content": "주요 내용2",
+            "category": "게임",
+            "recruitmentField": "개발",
+            "createdDate": "2021-01-23T04:49:11",
+            "modifiedDate": "2021-01-23T04:52:16",
+            "portfolioTag": [],
+            "user": {
+                "id": 3,
+                "username": "홍길동",
+                "email": "example@gmail.com",
+                "image": "https://example/photo.jpg"
+            },
+            "viewNum": 0,
+            "commentsNum": 0
         }
     ]
 }
