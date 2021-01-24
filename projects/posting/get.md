@@ -53,56 +53,6 @@ GET
       * username: 댓글 작성자 이름 \(string\)
       * image: 댓글 작성자 프로필 사진 \(이미지 링크 URI string\)
       
-<details>
-<summary>Table Summary</summary>
-<div markdown="1">
-
-|name|type|description|
-|---|---|---|
-|id|number|게시물 고유 id|
-|title|string|게시물 제목|
-|content|string|게시물 내용|
-|category|string|카테고리|
-|recruitmentField|string|구인분야|
-|region|string|지역|
-|projectSection|string|프로젝트 종류|
-|tags|`tag`(오브젝트) 배열|프로젝트 태그 리스트|
-|image|string(URI)|프로젝트 이미지|
-|createdDate|string/DATETIME|게시물 작성 날짜|
-|modifiedDate|string/DATETIME|게시물 수정 날짜|
-|user|`user`(오브젝트)|게시물 작성자|
-|viewNum|number|조회수|
-|commentsNum|number|댓글 수|
-|comments|`comment`(오브젝트) 배열|댓글 리스트|
-
-* `tag`: 프로젝트 태그 정보\(object\)
-
-|name|type|description
-|---|---|---|
-|id|number(Long)|태그 id|
-|tagName|string|태그 내용|
-
-* `user`: 게시물 작성자 정보\(object\)
-
-|name|type|description |
-|---|---|---|
-|id|number(Long)|사용자 고유 id|
-|username|string|사용자 이름|
-|email|string|사용자 이메일|
-|image|string(URI)|사용자 프로필 이미지 경로|
-
-* `user`: 게시물 작성자 정보\(object\)
-
-|name|type|description |
-|---|---|---|
-|id|number(Long)|댓글 고유 id|
-|createdDate|string/DATETIME|댓글 작성 날짜|
-|modifiedDate|string/DATETIME|댓글 수정 날짜|
-|content|string|댓글 내용|
-|user|`user`(오브젝트)|댓글 작성자|
-</div>
-</details>
-
 ### RESPONSE EXAMPLE
 
 #### success
@@ -149,7 +99,7 @@ GET
                 "id": 12,
                 "email": "example2@ewhain.net",
                 "username": "­이화연",
-                "image": "https://example2/photo.jpg",
+                "image": "https://example2/photo.jpg"
             }
         },
         {
@@ -161,7 +111,7 @@ GET
                 "id": 12,
                 "email": "example2@ewhain.net",
                 "username": "­이화연",
-                "image": "https://example2/photo.jpg",
+                "image": "https://example2/photo.jpg"
             }
         }
     ]
