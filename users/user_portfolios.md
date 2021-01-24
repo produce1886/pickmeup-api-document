@@ -13,7 +13,7 @@ GET
 ## URL
 
 ```text
-/user/:id/portfolios
+/users/:id/portfolios
 ```
 
 * id: 사용자의 아이디 입니다 \(픽미업 DB 기준\)
@@ -63,7 +63,7 @@ GET
 
 **HTTP Status code : 200 OK**
 
-```markup
+```json
 {
     "totalNum": 2,
     "portfolioList": [
@@ -76,14 +76,14 @@ GET
             "createdDate": "2021-01-23T04:34:35",
             "modifiedDate": "2021-01-23T04:43:13",
             "portfolioTag": [
-            {
-            "id": 2,
-            "tagName": "두번째 태그"
-            },
-            {
-            "id": 3,
-            "tagName": "세번째 태그"
-            }
+                {
+                    "id": 2,
+                    "tag": "두번째 태그"
+                },
+                {
+                    "id": 3,
+                    "tag": "3번쨰 태그"
+                }
             ],
             "user": {
                 "id": 3,

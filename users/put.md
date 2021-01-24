@@ -13,7 +13,7 @@ PUT
 ## URL
 
 ```text
-/user/:id
+/users/:id
 ```
 
 * id: 유저 정보를 수정할 유저의 픽미업 DB에서의 고유 id

@@ -13,7 +13,7 @@ PATCH
 ## URL
 
 ```http
-/user/:id/image
+/users/:id/image
 ```
 
 * id: 유저 정보를 수정할 유저의 픽미업 DB에서의 고유 id

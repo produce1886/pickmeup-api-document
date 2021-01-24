@@ -13,7 +13,7 @@ GET
 ## URL
 
 ```text
-/user/:id
+/users/:id
 ```
 
 * id: 유저 정보를 불러올 유저의 픽미업 DB에서의 고유 id

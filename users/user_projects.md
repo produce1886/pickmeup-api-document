@@ -13,7 +13,7 @@ GET
 ## URL
 
 ```text
-/user/:id/projects
+/users/:id/projects
 ```
 
 * id: 사용자의 아이디 입니다 \(픽미업 DB 기준\)

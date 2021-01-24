@@ -13,7 +13,7 @@ POST
 ## URL
 
 ```text
-/project
+/projects
 ```
 
 ## REQUEST BODY
@@ -26,7 +26,7 @@ POST
 |recruitmentField|string|필수|구인분야|
 |region|string|필수|지역|
 |projectSection|string|필수|프로젝트 종류|
-|tags|String 배열|필수, 값이 없으면 빈 리스트로(`[]`)|프로젝트 태그|
+|projectTags|String 배열|필수, 값이 없으면 빈 리스트로(`[]`)|프로젝트 태그|
 |image|string(URI)|선택|프로젝트 이미지 경로|
 
 해당 리퀘스트의 바디로 보내는 이름, 이메일, 이미지는 소셜 로그인 api에서 제공하는 정보입니다. 현재는 구글 로그인만 사용하니 해당 사용자의 구글 계정에 설정한 이름, 이메일, 프로필 이미지가 되겠습니다.
@@ -42,7 +42,7 @@ POST
     "recruitmentField": "디자인",
     "region": "서울",
     "projectSection": "공모전",
-    "tags": ["포토샵", "제플린"],
+    "projectTags": ["포토샵", "제플린"],
     "image": "https://example.png"
 }
 ```
