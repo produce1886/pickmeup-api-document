@@ -34,7 +34,7 @@ POST
 
 ### REQUEST BODY EXAMPLE
 
-```
+```json
 {
         "authorEmail": "example@gmail.com",
         "title": "예시 포트폴리오",
@@ -66,21 +66,21 @@ POST
 
 **HTTP Status code : 400 Bad Request**
 
-```
+```json
 {
     "status": 400,
     "message": "필수항목을 입력해주세요. "
 }
 ```
 
-```
+```json
 {
     "status": 400,
     "message": "태그 등록에 실패했습니다. "
 }
 ```
 
-```
+```json
 {
     "status": 400,
     "message": "존재하지 않는 계정입니다. "
