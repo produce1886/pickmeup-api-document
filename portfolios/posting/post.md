@@ -16,34 +16,73 @@ POST
 /portfolios
 ```
 
-## REQUEST BODY
+## REQUEST
 
-* title: 게시물 제목 \(string\)
-* content: 게시물 내용 \(string\)
-* email: 작성자 이메일 \(string\)
-* category: 카테고리 \(string\) 
-* recruitmentField: 구인분야 \(string\)
-* tags: 태그 - 최대 5개 \(string 배열\)
-* image: 이미지 - 최대 5개 \(base64 encoded string / BLOB **배열**\)
+### REQUEST BODY
+
+| name             | type          | require                             | description               |
+| ---------------- | ------------- | ----------------------------------- | ------------------------- |
+| authorEmail      | string        | 필수                                | 작성자 이메일             |
+| title            | string        | 필수                                | 게시물 제목               |
+| content          | string        | 필수                                | 게시물 내용               |
+| category         | string        | 필수                                | 카테고리                  |
+| recruitmentField | string        | 필수                                | 구인분야                  |
+| portfolioTags    | String  배열, | 필수, 값이 없으면 빈 리스트로(`[]`) | 포트폴리오 태그, 최대 5개 |
+| image            | string(URI)   | 선택                                | 포트폴리오 이미지 경로    |
+
+해당 리퀘스트의 바디로 보내는 이름, 이메일, 이미지는 소셜 로그인 api에서 제공하는 정보입니다. 현재는 구글 로그인만 사용하니 해당 사용자의 구글 계정에 설정한 이름, 이메일, 프로필 이미지가 되겠습니다.
 
 ### REQUEST BODY EXAMPLE
 
-```markup
+```json
 {
-        "title": "예시 프로젝트",
+        "authorEmail": "example@gmail.com",
+        "title": "예시 포트폴리오",
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit.",
-        "email": "example@gmail.com",
         "category": "웹",
-        "recruimentField": "디자인",
-        "tags": ["포토샵", "제플린”],
-        “image”: [
-                “base64 encoded string1",
-                “base64 encoded string2"
-                ]
+        "recruitmentField": "디자인",
+        "portfolioTags": ["포토샵", "제플린"],
+        "image": "image uri"
 }
 ```
 
+## RESPONSE
 
+### success
 
+**HTTP Status code : 201 Created**
 
+> Response Body는 따로 없습니다.  
+> 대신, Http Location **헤더**에 생성된 자원의 경로를 붙여서 반환합니다.  
 
+### fail
+
+| name    | type   | description                                                  |
+| ------- | ------ | ------------------------------------------------------------ |
+| status  | number | HTTP status code(에러 상황에 따라 변할 수 있습니다. )        |
+| message | string | 에러 메시지(메시지 내용은 에러 상황에 따라 변할 수 있습니다. ) |
+
+#### REQUEST BODY EXAMPLE
+
+**HTTP Status code : 400 Bad Request**
+
+```json
+{
+    "status": 400,
+    "message": "필수항목을 입력해주세요. "
+}
+```
+
+```json
+{
+    "status": 400,
+    "message": "태그 등록에 실패했습니다. "
+}
+```
+
+```json
+{
+    "status": 400,
+    "message": "존재하지 않는 계정입니다. "
+}
+```

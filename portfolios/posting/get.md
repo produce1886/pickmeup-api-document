@@ -20,53 +20,68 @@ GET
 
 ## RESPONSE
 
-* id: 게시물 고유 id \(number\)
-* title: 게시물 제목 \(string\)
-* content: 게시물 내용 \(string\)
-* category: 카테고리 \(string\) 
-* recruitmentField: 구인분야 \(string\)
-* portfolioTag: 포트폴리오 태그 \(tag 배열\)
-  * tag
-    * id: 태그 id \(number\)
-    * tag: 태그 내용 \(string\)
-* image: 이미지 \(base64 encoded string / BLOB **배열**\)
-* createdDate: 게시물 작성 날짜 \(string / DATETIME\)
-* modifiedDate: 게시물 수정 날짜 \(string / DATETIME\)
-* user: 게시물 작성자 정보\(object\)
-  * id: 게시물 작성자의 데이터베이스에 저장된 고유 id \(number\)
-  * email: 게시물 작성자의 이메일 \(string\)
-  * username: 작성자 이름 \(string\)
-  * image: 작성자 프로필 사진 \(이미지 링크 string or base64 encoded string / BLOB\)
-* viewNum: 조회수 \(number\)
-* commentsNum: 댓글 수 \(number\)
-* comments: 댓글 목록 \(comment 배열\)
-  * comment
-    * createdDate: 댓글 작성 날짜 \(string / DATETIME\)
-    * modifiedDate: 댓글 수정 날짜 \(string / DATETIME\)
-    * id: 댓글 고유 id \(number\)
-    * content: 댓글 내용 \(string\)
-    * user: 게시물 작성자 정보\(object\)
-      * id: 댓글 작성자의 데이터베이스에 저장된 고유 id \(number\) 
-      * email: 댓글 작성자의 이메일 \(string\)
-      * username: 댓글 작성자 이름 \(string\)
-      * image: 댓글 작성자 프로필 사진 \(이미지 링크 string or base64 encoded string / BLOB\)
+| name             | type                             | description               |
+| ---------------- | -------------------------------- | ------------------------- |
+| id               | number                           | 게시물 고유 id            |
+| title            | string                           | 게시물 제목               |
+| content          | string                           | 게시물 내용               |
+| category         | string                           | 카테고리                  |
+| recruitmentField | string                           | 구인분야                  |
+| portfolioTags  | `tag` (오브젝트) 배열     | 포트폴리오 태그, 최대 5개 |
+| images          | string(URI) 배열                 | 포트폴리오 이미지 경로    |
+| createdDate      | string / DATETIME                | 게시물 작성 날짜          |
+| modifiedDate     | string / DATETIME                | 게시물 수정 날짜          |
+| user             | `user` (오브젝트) 배열    | 게시물 작성자 정보        |
+| viewNum | number          | 조회수       |
+| commentsNum | number          | 댓글 수      |
+| comments | `comment` (오브젝트) 배열 | 댓글 목록     |
+
+* `tag` : 포트폴리오 태그 정보(object)
+
+| name    | type   | description |
+| ------- | ------ | ----------- |
+| id      | number | 태그 id     |
+| tagName | string | 태그 내용   |
+
+* `comment` : 댓글 정보(object)
+
+| name         | type                   | description        |
+| ------------ | ---------------------- | ------------------ |
+| id           | number                 | 댓글 고유 id       |
+| content      | string                 | 댓글 내용          |
+| createdDate  | string / DATETIME      | 댓글 작성 날짜     |
+| modifiedDate | string / DATETIME      | 댓글 수정 날짜     |
+| user         | `user` (오브젝트) 배열 | 게시물 작성자 정보 |
+
+- `user` : 게시물 작성자 정보(object)
+
+| name     | type         | description               |
+| -------- | ------------ | ------------------------- |
+| id       | number(Long) | 사용자 고유 id            |
+| username | string       | 사용자 이름               |
+| email    | string       | 사용자 이메일             |
+| image    | string(URI)  | 사용자 프로필 이미지 경로 |
 
 ### RESPONSE EXAMPLE
 
-```markup
+#### success
+
+**HTTP Status code : 200 OK**
+
+```json
 {
     "id": 123,
     "title": "example",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit.",
     "category": "게임",
     "recruitmentField": "기획",
-    "portfolioTag": [
+    "portfolioTags": [
         {
             "id": 1,
             "tag": "모바일게임"
         }
     ],
-    "image": ["base64 encoded string"],
+    "images": ["base64 encoded string"],
     "createdDate": "2021-01-07T14:49:52",
     "modifiedDate": "2021-01-08T14:05:43",
     "user": {
@@ -106,7 +121,20 @@ GET
 }
 ```
 
+#### fail
 
+**HTTP Status code : 400 Bad Request**
 
+```json
+{
+    "status": 400,
+    "message": "존재하지 않는 계정입니다. "
+}
+```
 
-
+```json
+{
+    "status": 400,
+    "message": "존재하지 않는 포트폴리오입니다. "
+}
+```
