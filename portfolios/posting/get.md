@@ -27,8 +27,8 @@ GET
 | content          | string                           | 게시물 내용               |
 | category         | string                           | 카테고리                  |
 | recruitmentField | string                           | 구인분야                  |
-| portfolioTag   | `tag` (오브젝트) 배열     | 포트폴리오 태그, 최대 5개 |
-| image           | string(URI) 배열                 | 포트폴리오 이미지 경로    |
+| portfolioTags  | `tag` (오브젝트) 배열     | 포트폴리오 태그, 최대 5개 |
+| images          | string(URI) 배열                 | 포트폴리오 이미지 경로    |
 | createdDate      | string / DATETIME                | 게시물 작성 날짜          |
 | modifiedDate     | string / DATETIME                | 게시물 수정 날짜          |
 | user             | `user` (오브젝트) 배열    | 게시물 작성자 정보        |
@@ -75,13 +75,13 @@ GET
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit.",
     "category": "게임",
     "recruitmentField": "기획",
-    "portfolioTag": [
+    "portfolioTags": [
         {
             "id": 1,
             "tag": "모바일게임"
         }
     ],
-    "image": ["base64 encoded string"],
+    "images": ["base64 encoded string"],
     "createdDate": "2021-01-07T14:49:52",
     "modifiedDate": "2021-01-08T14:05:43",
     "user": {
