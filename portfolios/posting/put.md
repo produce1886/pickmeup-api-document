@@ -44,3 +44,43 @@ PUT
 }
 ```
 
+## RESPONSE
+
+### Success
+
+**HTTP Status code : 200 Ok**
+
+### fail
+
+| name    | type   | description                                                  |
+| ------- | ------ | ------------------------------------------------------------ |
+| status  | number | HTTP status code(에러 상황에 따라 변할 수 있습니다. )        |
+| message | string | 에러 메시지(메시지 내용은 에러 상황에 따라 변할 수 있습니다. ) |
+
+#### RESPONSE BODY EXAMPLE
+
+**HTTP Status code : 400 Bad Request**
+
+```json
+{
+    "status": 400,
+    "message": "존재하지 않는 포트폴리오입니다. "
+}
+```
+
+```json
+{
+    "status": 400,
+    "message": "필수항목을 입력해주세요. "
+}
+```
+
+**HTTP Status code : 400 Forbidden**
+
+```json
+{
+    "status": 403,
+    "message": "권한이 없습니다. "
+}
+```
+
