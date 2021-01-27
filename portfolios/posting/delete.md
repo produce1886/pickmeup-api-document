@@ -20,5 +20,27 @@ DELETE
 
 
 
+## RESPONSE
 
+### success
+
+**HTTP Status code : 204 No Content**
+
+### fail
+
+| name    | type   | description                                                  |
+| ------- | ------ | ------------------------------------------------------------ |
+| status  | number | HTTP status code(에러 상황에 따라 변할 수 있습니다. )        |
+| message | string | 에러 메시지(메시지 내용은 에러 상황에 따라 변할 수 있습니다. ) |
+
+#### REQUEST BODY EXAMPLE
+
+**HTTP Status code : 400 Bad Request**
+
+```json
+{
+    "status": 400,
+    "message": "존재하지 않는 포트폴리오입니다. "
+}
+```
 
