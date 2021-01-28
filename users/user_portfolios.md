@@ -29,7 +29,6 @@ GET
     * category: 카테고리 \(string\) 
     * recruitmentField: 구인분야 \(string\)
     * region: 지역 \(string\)
-    * portfolioSection: 포트폴리오 종류 \(string\)
     * portfolioTags: 포트폴리오 태그 \(tag 배열\)
       * tag
         * id: 태그 id \(number\)
