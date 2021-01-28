@@ -58,10 +58,10 @@ sortBy, category, recruitmentField, keyword는 optional이고, 만약 사용자�
       * 이미지가 아예 없는 경우 ""\(빈 문자열\) 보
     * category: 카테고리 \(string\) 
     * recruitmentField: 구인분야 \(string\)
-    * portfolioTag: 포트폴리오 태그 \(tag 배열\)
+    * portfolioTags: 포트폴리오 태그 \(tag 배열\)
       * tag
         * id: 태그 id \(number\)
-        * tag: 태그 내용 \(string\)
+        * tagName: 태그 내용 \(string\)
     * createdDate: 게시물 작성 날짜 \(string / DATETIME\)
     * modifiedDate: 게시물 수정 날짜 \(string / DATETIME\)
     * user: 게시물 작성자 정보\(object\)
