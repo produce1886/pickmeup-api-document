@@ -20,44 +20,29 @@ GET
 
 ## RESPONSE
 
-|name|type|description|
-|---|---|---|
-|totalNum|number|프로젝트 게시글 총 개수|
-|projectList|`project`(오브젝트) 배열|프로젝트 게시글 리스트|
-
-* `project` : 프로젝트 정보\(object\)
-
-|name|type|description|
-|---|---|---|
-|id|number|게시물 고유 id|
-|title|string|게시물 제목|
-|content|string|게시물 내용|
-|category|string|카테고리|
-|recruitmentField|string|구인분야|
-|region|string|지역|
-|projectSection|string|프로젝트 종류|
-|tags|`tag`(오브젝트) 배열|프로젝트 태그 리스트|
-|createdDate|string/DATETIME|게시물 작성 날짜|
-|modifiedDate|string/DATETIME|게시물 수정 날짜|
-|user|`user`(오브젝트)|게시물 작성자|
-|viewNum|number|조회수|
-|commentsNum|number|댓글 수|
-
-* `tag`: 프로젝트 태그 정보\(object\)
-
-|name|type|description
-|---|---|---|
-|id|number(Long)|태그 id|
-|tagName|string|태그 내용|
-
-* `user`: 게시물 작성자 정보\(object\)
-
-|name|type|description |
-|---|---|---|
-|id|number(Long)|사용자 고유 id|
-|username|string|사용자 이름|
-|email|string|사용자 이메일|
-|image|string(URI)|사용자 프로필 이미지 경로|
+* totalNum: 프로젝트 게시글 총 개수 \(number\)
+* projectList: 프로젝트 게시글 리스트 \(project 배열\)
+  * project
+    * id: 게시물 고유 id \(number\)
+    * title: 게시물 제목 \(string\)
+    * content: 게시물 내용 \(string\)
+    * category: 카테고리 \(string\) 
+    * recruitmentField: 구인분야 \(string\)
+    * region: 지역 \(string\)
+    * projectSection: 프로젝트 종류 \(string\)
+    * projectTags: 프로젝트 태그 \(tag 배열\)
+      * tag
+        * id: 태그 id \(number\)
+        * tagName: 태그 내용 \(string\)
+    * createdDate: 게시물 작성 날짜 \(string / DATETIME\)
+    * modifiedDate: 게시물 수정 날짜 \(string / DATETIME\)
+    * user: 게시물 작성자 정보\(object\)
+      * id: 게시물 작성자의 데이터베이스에 저장된 고유 id \(number\)
+      * email: 게시물 작성자의 이메일 \(string\)
+      * username: 작성자 이름 \(string\)
+      * image: 작성자 프로필 사진 \(이미지 링크 string or base64 encoded string / BLOB\)
+    * viewNum: 조회수 \(number\)
+    * commentsNum: 댓글 수 \(number\)
 
 ### RESPONSE EXAMPLE
 
@@ -100,11 +85,11 @@ GET
             "projectTag": [
                 {
                     "id": 1,
-                    "tag": "리액트"
+                    "tagName": "리액트"
                 },
                 {
                     "id": 2,
-                    "tag": "reactjs"
+                    "tagName": "reactjs"
                 }
             ],
             "createdDate": "2021-01-08T14:49:52",

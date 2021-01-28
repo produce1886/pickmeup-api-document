@@ -30,7 +30,7 @@ GET
 * projectTags: 프로젝트 태그 \(tag 배열\)
   * tag
     * id: 태그 id \(number\)
-    * tag: 태그 내용 \(string\)
+    * tagName: 태그 내용 \(string\)
 * image: 프로젝트 이미지 \(이미지 링크 URI string\)
 * createdDate: 게시물 작성 날짜 \(string / DATETIME\)
 * modifiedDate: 게시물 수정 날짜 \(string / DATETIME\)

@@ -7,7 +7,7 @@ description: 프로젝트 페이지에 있는 게시물 목록을 조건에 맞�
 ## METHOD
 
 ```text
-POST
+GET
 ```
 
 ## URL
@@ -16,39 +16,27 @@ POST
 /projects/list
 ```
 
-## REQUEST BODY
-
-* page: 불러올 페이지 \(number\)
-* size: 불러올 게시물 개수 \(number\)
-* sortBy: 정렬 기준\("createdDate"/"commentsNum"/"viewNum"\)
-  * 순서대로 최신순, 댓글순, 조회순
-  * 기본은 최신순으로 프론트에서 기본적으로 "createdDate"를 전달
-* category: 검색하는 카테고리 \(string\) 
-* recruitmentField: 검색하는 구인분야 \(string\)
-* region: 검색하는 지역 \(string\)
-* projectCategory: 검색하는 프로젝트 종류 \(string\)
-* keyword: 검색어 \(string\)
-
-page에서부터 size만큼 게시물을 불러온다.
-
-sortBy, category, recruitmentField, region, projectCategory, keyword는 optional이고, 만약 사용자가 따로 지정하지 않은 경우는 각 key들의 value를 ""\(빈 문자열\)로 보냅니다. 이 경우, 필터링하지 않고 모든 게시물을 불러옵니다.   
-
-### REQUEST BODY EXAMPLE
-
-```markup
-{
-    "page": 0,
-    "size": 10,
-    "sortBy": "createdDate",
-    "category": "",
-    "recruitmentField": "",
-    "region": "서울",
-    "projectCategory": "",
-    "keyword": "리액트"
-}
+## URL EXAMPLE
+```http
+/projects/list?page=0&size=10&sort=viewNum,desc&category=&recruitmentField=&region=서울&projectSection=창업&keyword=
 ```
 
-프로젝트 게시글 중 region이 서울로 되어 있는 게시글들 중 "리액트" 검색어를 적용한 검색 결과를 응답합니다. 
+## QUERY STRING
+
+|name|type|require|description
+|---|---|---|---|
+|page|number|선택, 기본값 = 0|불러올 페이지|
+|size|string|선택, 기본값 = 20|불러올 게시물 개수|
+|sort|string|선택|정렬 기준 / 기본값은 오름차순 정렬이며, 내림차순은 뒤에 `,desc`를 붙임 (ex: 최신순 `sort=viewNum,desc`)|
+|category|string|필수, 값이 없으면 빈 스트링으로(`""`)|검색하는 카테고리|
+|recruitmentField|string|필수, 값이 없으면 빈 스트링으로(`""`)|검색하는 구인분야|
+|region|string|필수, 값이 없으면 빈 스트링으로(`""`)|검색하는 지역|
+|projectSection|string|필수, 값이 없으면 빈 스트링으로(`""`)|검색하는 프로젝트 종류|
+|keyword|string|필수, 값이 없으면 빈 스트링으로(`""`)|검색어|
+
+> page에서부터 size만큼 게시물을 불러온다.  
+> 빈 스트링으로 온 경우는 필터링을 하지 않는다. 예를 들어 category, recruitmentField, region, 
+> projectSection, keyword가 모두 빈 스트링이면 모든 게시물을 sort 조건으로 정렬하여, size만큼 page별로 가져온다. 
 
 ## RESPONSE
 
@@ -61,11 +49,11 @@ sortBy, category, recruitmentField, region, projectCategory, keyword는 optional
     * category: 카테고리 \(string\) 
     * recruitmentField: 구인분야 \(string\)
     * region: 지역 \(string\)
-    * projectCategory: 프로젝트 종류 \(string\)
-    * projectTag: 프로젝트 태그 \(tag 배열\)
+    * projectSection: 프로젝트 종류 \(string\)
+    * projectTags: 프로젝트 태그 \(tag 배열\)
       * tag
         * id: 태그 id \(number\)
-        * tag: 태그 내용 \(string\)
+        * tagName: 태그 내용 \(string\)
     * createdDate: 게시물 작성 날짜 \(string / DATETIME\)
     * modifiedDate: 게시물 수정 날짜 \(string / DATETIME\)
     * user: 게시물 작성자 정보\(object\)
@@ -78,9 +66,9 @@ sortBy, category, recruitmentField, region, projectCategory, keyword는 optional
 
 ### RESPONSE EXAMPLE
 
-```markup
+```json
 {
-    "totalNum": 162,
+    "totalNum": 10,
     "projectList": [
         {
             "id": 123,
@@ -88,8 +76,8 @@ sortBy, category, recruitmentField, region, projectCategory, keyword는 optional
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit.",
             "category": "게임",
             "recruitmentField": "기획",
-            "region": "경기",
-            "projectCategory": "창업",
+            "region": "서울",
+            "projectSection": "창업",
             "projectTag": [],
             "createdDate": "2021-01-07T14:49:52",
             "modifiedDate": "2021-01-08T14:05:43",
@@ -99,7 +87,7 @@ sortBy, category, recruitmentField, region, projectCategory, keyword는 optional
                 "username": "홍길동",
                 "image": "https://example/photo.jpg"
             },
-            "viewNum": 15,
+            "viewNum": 121,
             "commentsNum": 2
         },
         {
@@ -109,15 +97,15 @@ sortBy, category, recruitmentField, region, projectCategory, keyword는 optional
             "category": "웹",
             "recruitmentField": "개발",
             "region": "부산",
-            "projectCategory": "창업",
+            "projectSection": "창업",
             "projectTag": [
                 {
                     "id": 1,
-                    "tag": "리액트"
+                    "tagName": "리액트"
                 },
                 {
                     "id": 2,
-                    "tag": "reactjs"
+                    "tagName": "reactjs"
                 }
             ],
             "createdDate": "2021-01-08T14:49:52",
@@ -128,10 +116,10 @@ sortBy, category, recruitmentField, region, projectCategory, keyword는 optional
                 "username": "홍길동",
                 "image": "https://example/photo.jpg"
             },
-            "viewNum": 121,
+            "viewNum": 15,
             "commentsNum": 7
         },
-        ... // 이후 반
+        ... // 이후 반복
     ]
 }
 ```

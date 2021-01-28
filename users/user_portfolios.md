@@ -20,42 +20,29 @@ GET
 
 ## RESPONSE
 
-| name          | type                       | description               |
-| ------------- | -------------------------- | ------------------------- |
-| totalNum      | number                     | 포트폴리오 게시글 총 개수 |
-| portfolioList | `portfolio`(오브젝트) 배열 | 포트폴리오 게시글 리스트  |
-
-* `portfolio` : 포트폴리오 정보(object)
-
-| name             | type                 | description          |
-| ---------------- | -------------------- | -------------------- |
-| id               | number               | 게시물 고유 id       |
-| title            | string               | 게시물 제목          |
-| content          | string               | 게시물 내용          |
-| category         | string               | 카테고리             |
-| recruitmentField | string               | 구인분야             |
-| createdDate      | string/DATETIME      | 게시물 작성 날짜     |
-| modifiedDate     | string/DATETIME      | 게시물 수정 날짜     |
-| portfolioTag     | `tag`(오브젝트) 배열 | 프로젝트 태그 리스트 |
-| user             | `user`(오브젝트)     | 게시물 작성자        |
-| viewNum          | number               | 조회수               |
-| commentsNum      | number               | 댓글 수              |
-
-* `tag` : 포트폴리오 태그 정보(object)
-
-| name    | type   | description |
-| ------- | ------ | ----------- |
-| id      | number | 태그 id     |
-| tagName | string | 태그 내용   |
-
-* `user` : 게시물 작성자 정보\(object\)
-
-| name     | type         | description               |
-| -------- | ------------ | ------------------------- |
-| id       | number(Long) | 사용자 고유 id            |
-| username | string       | 사용자 이름               |
-| email    | string       | 사용자 이메일             |
-| image    | string(URI)  | 사용자 프로필 이미지 경로 |
+* totalNum: 포트폴리오 게시글 총 개수 \(number\)
+* portfolioList: 포트폴리오 게시글 리스트 \(project 배열\)
+  * portfolio
+    * id: 게시물 고유 id \(number\)
+    * title: 게시물 제목 \(string\)
+    * content: 게시물 내용 \(string\)
+    * category: 카테고리 \(string\) 
+    * recruitmentField: 구인분야 \(string\)
+    * region: 지역 \(string\)
+    * portfolioSection: 포트폴리오 종류 \(string\)
+    * portfolioTags: 포트폴리오 태그 \(tag 배열\)
+      * tag
+        * id: 태그 id \(number\)
+        * tagName: 태그 내용 \(string\)
+    * createdDate: 게시물 작성 날짜 \(string / DATETIME\)
+    * modifiedDate: 게시물 수정 날짜 \(string / DATETIME\)
+    * user: 게시물 작성자 정보\(object\)
+      * id: 게시물 작성자의 데이터베이스에 저장된 고유 id \(number\)
+      * email: 게시물 작성자의 이메일 \(string\)
+      * username: 작성자 이름 \(string\)
+      * image: 작성자 프로필 사진 \(이미지 링크 string or base64 encoded string / BLOB\)
+    * viewNum: 조회수 \(number\)
+    * commentsNum: 댓글 수 \(number\)
 
 ### RESPONSE EXAMPLE
 
@@ -75,14 +62,14 @@ GET
             "recruitmentField": "기획",
             "createdDate": "2021-01-23T04:34:35",
             "modifiedDate": "2021-01-23T04:43:13",
-            "portfolioTag": [
+            "portfolioTags": [
                 {
                     "id": 2,
-                    "tag": "두번째 태그"
+                    "tagName": "두번째 태그"
                 },
                 {
                     "id": 3,
-                    "tag": "3번쨰 태그"
+                    "tagName": "3번쨰 태그"
                 }
             ],
             "user": {
@@ -102,7 +89,7 @@ GET
             "recruitmentField": "개발",
             "createdDate": "2021-01-23T04:49:11",
             "modifiedDate": "2021-01-23T04:52:16",
-            "portfolioTag": [],
+            "portfolioTags": [],
             "user": {
                 "id": 3,
                 "username": "홍길동",
