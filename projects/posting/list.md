@@ -17,7 +17,8 @@ GET
 ```
 
 ## URL EXAMPLE
-```http request
+
+```http
 GET /projects/list?page=0&size=10&sort=viewNum,desc&region=서울&projectSection=창업
 ```
 
