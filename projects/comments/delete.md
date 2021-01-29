@@ -20,7 +20,7 @@ DELETE
 * commentId: 삭제할 댓글의 고유 id
 
 
-## RESPONSE
+## RESPONSE 
 ### success
 **HTTP Status code : 204 No Content**
 > Response Body는 따로 없습니다.  
@@ -37,8 +37,6 @@ DELETE
     "modifiedDate": "2020-11-16T17:04:10"
 }
 ```
-
-#### fail
 
 - 고유 댓글 id의 존재 유무와 상관없이 해당 id의 프로젝트 게시물이 없는 경우
 
