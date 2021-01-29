@@ -17,8 +17,8 @@ GET
 ```
 
 ## URL EXAMPLE
-```http
-/projects/list?page=0&size=10&sort=viewNum,desc&category=&recruitmentField=&region=서울&projectSection=창업&keyword=
+```http request
+GET /projects/list?page=0&size=10&sort=viewNum,desc&region=서울&projectSection=창업
 ```
 
 ## QUERY STRING
@@ -27,16 +27,16 @@ GET
 |---|---|---|---|
 |page|number|선택, 기본값 = 0|불러올 페이지|
 |size|string|선택, 기본값 = 20|불러올 게시물 개수|
-|sort|string|선택|정렬 기준 / 기본값은 오름차순 정렬이며, 내림차순은 뒤에 `,desc`를 붙임 (ex: 최신순 `sort=viewNum,desc`)|
-|category|string|필수, 값이 없으면 빈 스트링으로(`""`)|검색하는 카테고리|
-|recruitmentField|string|필수, 값이 없으면 빈 스트링으로(`""`)|검색하는 구인분야|
-|region|string|필수, 값이 없으면 빈 스트링으로(`""`)|검색하는 지역|
-|projectSection|string|필수, 값이 없으면 빈 스트링으로(`""`)|검색하는 프로젝트 종류|
-|keyword|string|필수, 값이 없으면 빈 스트링으로(`""`)|검색어|
+|sort|string|선택|정렬 기준 / 기본값은 오름차순 정렬이며, 내림차순은 뒤에 `,desc`를 붙임 (ex: 최신순 `sort=createdDate,desc`)|
+|category|string|선택|검색하는 카테고리|
+|recruitmentField|string|선택|검색하는 구인분야|
+|region|string|선택|검색하는 지역|
+|projectSection|string|선택|검색하는 프로젝트 종류|
+|keyword|string|선택|검색어, 주어질 경우 게시물 제목이나 내용에 검색어가 포함되는 게시물만 필터링|
 
 > page에서부터 size만큼 게시물을 불러온다.  
 > 빈 스트링으로 온 경우는 필터링을 하지 않는다. 예를 들어 category, recruitmentField, region, 
-> projectSection, keyword가 모두 빈 스트링이면 모든 게시물을 sort 조건으로 정렬하여, size만큼 page별로 가져온다. 
+> projectSection, keyword가 모두 주어지지 않은 경우 모든 게시물을 sort 조건으로 정렬하여, size만큼 page별로 가져온다. 
 
 ## RESPONSE
 
@@ -78,7 +78,7 @@ GET
             "recruitmentField": "기획",
             "region": "서울",
             "projectSection": "창업",
-            "projectTag": [],
+            "projectTags": [],
             "createdDate": "2021-01-07T14:49:52",
             "modifiedDate": "2021-01-08T14:05:43",
             "user": {
@@ -98,7 +98,7 @@ GET
             "recruitmentField": "개발",
             "region": "부산",
             "projectSection": "창업",
-            "projectTag": [
+            "projectTags": [
                 {
                     "id": 1,
                     "tagName": "리액트"

@@ -13,10 +13,10 @@ GET
 ## URL
 
 ```text
-/projects/:id/comments/:commentId
+/projects/:projectId/comments/:commentId
 ```
 
-* id: 해당 댓글이 작성된 \(프로젝트 페이지의\) 게시물 고유 id
+* projectId: 해당 댓글이 작성된 \(프로젝트 페이지의\) 게시물 고유 id
 * commentId: 해당 댓글의 고유 id
 
 ## RESPONSE
@@ -26,12 +26,14 @@ GET
 | id           | number    | 댓글 고유 id         |
 | content      | string    | 댓글 내용            |
 | authorEmail  | string    | 댓글 작성자의 이메일 |
-| createdDate  | TIMESTAMP | 댓 작성 날짜         |
-| modifiedDate | TIMESTAMP | 댓 수정 날짜         |
+| createdDate  | TIMESTAMP | 댓글 작성 날짜         |
+| modifiedDate | TIMESTAMP | 댓글 수정 날짜         |
 
 ### RESPONSE EXAMPLE
 
 #### Success
+
+**HTTP Status code : 200 OK**
 
 ```json
 {
@@ -42,8 +44,6 @@ GET
     "modifiedDate": "2020-11-16T17:04:10"
 }
 ```
-
-
 
 #### fail
 
@@ -73,4 +73,9 @@ GET
     "message": "잘못된 경로로 접근했습니다. "
 }
 ```
+
+|name|type|description|
+|---|---|---|
+|status|number|HTTP status code(에러 상황에 따라 변할 수 있습니다. )|
+|message|string|에러 메시지(메시지 내용은 에러 상황에 따라 변할 수 있습니다. )|
 

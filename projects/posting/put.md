@@ -56,7 +56,7 @@ PUT
 
 ### fail
 
-**HTTP Status code: 400 Bad Request**
+**HTTP Status code: 400 Bad Request or 403 Forbidden**
 
 ```json
 {

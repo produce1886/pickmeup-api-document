@@ -7,6 +7,7 @@
 * [게시물](projects/posting/README.md)
   * [게시물 생성](projects/posting/post.md)
   * [게시물 읽기](projects/posting/get.md)
+  * [게시물 이미지 수정](projects/posting/patch.md)
   * [게시물 수정](projects/posting/put.md)
   * [게시물 삭제](projects/posting/delete.md)
   * [게시물 목록 불러오기](projects/posting/list.md)
