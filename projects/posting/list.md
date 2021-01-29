@@ -35,9 +35,9 @@ GET /projects/list?page=0&size=10&sort=viewNum,desc&region=서울&projectSection
 |projectSection|string|선택|검색하는 프로젝트 종류|
 |keyword|string|선택|검색어, 주어질 경우 게시물 제목이나 내용에 검색어가 포함되는 게시물만 필터링|
 
-> page에서부터 size만큼 게시물을 불러온다.  
-> 빈 스트링으로 온 경우는 필터링을 하지 않는다. 예를 들어 category, recruitmentField, region, 
-> projectSection, keyword가 모두 주어지지 않은 경우 모든 게시물을 sort 조건으로 정렬하여, size만큼 page별로 가져온다. 
+> page에서부터 size만큼 게시물을 불러옵니다.  
+> 쿼리 파라미터로 오지 않은 경우는 필터링을 하지 않습니다. 예를 들어 category, recruitmentField, region, 
+> projectSection, keyword가 모두 주어지지 않은 경우 모든 게시물을 sort 조건으로 정렬하여, size만큼 page별로 가져옵니다. 
 
 ## RESPONSE
 
