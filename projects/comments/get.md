@@ -31,7 +31,7 @@ GET
 
 ### RESPONSE EXAMPLE
 
-#### Success
+### success
 
 **HTTP Status code : 200 OK**
 
@@ -45,7 +45,7 @@ GET
 }
 ```
 
-#### fail
+### fail
 
 - 고유 댓글 id의 존재 유무와 상관없이 해당 id의 프로젝트 게시물이 없는 경우
 

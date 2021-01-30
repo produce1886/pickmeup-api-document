@@ -1,8 +1,8 @@
 ---
-description: 해당 id를 가진 프로젝트 페이지의 게시물을 수정하는 API입니다
+description: 해당 id를 가진 프로젝트의 이미지를 바꾸는 API입니다. 
 ---
 
-# 게시물 수정
+# 게시물 이미지 수정/삭제
 
 ## METHOD
 
@@ -23,15 +23,20 @@ PATCH
 |name|type|require|description
 |---|---|---|---|
 |image|multipart/form-data|필수|변경할 프로젝트 이미지|
-> 현재 저장가능한 이미지로 `.jpg`, `.jpeg`, `.gif`, `.png`, `.img`, `.tiff`, `.heif` 확장자만 지원합니다.
-
+> 현재 저장가능한 이미지로 `.jpg`, `.jpeg`, `.gif`, `.png`, `.img`, `.tiff`, `.heif` 확장자만 지원합니다.  
+> `image`로 아무 값도 전달하지 않을 경우 유저 프로젝트 이미지를 삭제하는 것으로 간주합니다. 
 
 ## RESPONSE
 ### success
+#### 프로젝트 이미지 수정
 **HTTP Status code : 201 Created**
 > Response Body는 따로 없습니다.  
 > 대신, Http Location **헤더**에 생성된 자원의 경로를 붙여서 반환합니다.  
 > 또한, [프로젝트 게시물 정보 불러오기 API](./get.md)를 다시 한 번 호출하면, 바뀐 이미지 경로를 확인할 수 있습니다.
+
+#### 프로젝트 이미지 삭제
+**HTTP Status code : 204 No Content**
+> Response Body는 따로 없습니다.  
 
 ### fail
 **HTTP Status code : 400 Bad Request or 500 Internal Server Error**

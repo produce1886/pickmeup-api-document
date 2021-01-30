@@ -19,6 +19,9 @@ GET
 * id: 유저 정보를 불러올 유저의 픽미업 DB에서의 고유 id
 
 ## RESPONSE
+> [로그인](../login/undefined.md)이나 [유저 정보 수정하기](put.md)의 REQUEST BODY와는 다르게
+> 유저 정보 RESPONSE BODY에서는 사용자 정보 공개 여부
+> `boolen`값들의 필드명에 `is`가 빠져있습니다.
 
 |name|type|description|
 |---|---|---|

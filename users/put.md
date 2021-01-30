@@ -29,10 +29,10 @@ PUT
 |major|string|선택|수정할 사용자 전공|
 |region|string|선택|수정할 사용자 활동 지역|
 |interests|string|선택|수정할 사용자 관심분야|
-|birthPublic|boolean|값 없을 시 자동으로 false|수정할 사용자 생년월일 공개 여부|
-|universityPublic|boolean|값 없을 시 자동으로 false|수정할 사용자 대학 공개 여부|
-|regionPublic|boolean|값 없을 시 자동으로 false|수정할 사용자 활동 지역 공개 여부|
-|interestsPublic|boolean|값 없을 시 자동으로 false|수정할 사용자 관심 분야 공개 여부|
+|isBirthPublic|boolean|값 없을 시 자동으로 false|수정할 사용자 생년월일 공개 여부|
+|isUniversityPublic|boolean|값 없을 시 자동으로 false|수정할 사용자 대학 공개 여부|
+|isRegionPublic|boolean|값 없을 시 자동으로 false|수정할 사용자 활동 지역 공개 여부|
+|isInterestsPublic|boolean|값 없을 시 자동으로 false|수정할 사용자 관심 분야 공개 여부|
 
 사용자가 정보를 입력한 적이 없으면 null이 기본값이며, username과 공개 여부 boolean 을 제외한 모든 값은 null이 들어갈 수 있습니다.  
 **boolean 값들은 입력하지 않을 시, 자동으로 `false`로 설정됩니다.** 

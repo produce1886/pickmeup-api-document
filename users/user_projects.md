@@ -46,7 +46,7 @@ GET
 
 ### RESPONSE EXAMPLE
 
-#### success
+### success
 
 **HTTP Status code : 200 OK**
 
@@ -107,7 +107,7 @@ GET
 }
 ```
 
-#### fail
+### fail
 
 **HTTP Status code : 400 Bad Request**
 
