@@ -71,8 +71,8 @@ PUT
 }
 ```
 
-#### REQUEST BODY
 |name|type|description|
 |---|---|---|
 |status|number|HTTP status code(에러 상황에 따라 변할 수 있습니다. )|
 |message|string|에러 메시지(메시지 내용은 에러 상황에 따라 변할 수 있습니다. )|
+

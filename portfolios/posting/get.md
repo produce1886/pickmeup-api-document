@@ -50,10 +50,10 @@ GET
       * email: 댓글 작성자의 이메일 \(string\)
       * username: 댓글 작성자 이름 \(string\)
       * image: 댓글 작성자 프로필 사진 \(이미지 링크 URI string\)
-          
+        
 ### RESPONSE EXAMPLE
 
-#### success
+### success
 
 **HTTP Status code : 200 OK**
 
@@ -67,7 +67,11 @@ GET
     "portfolioTags": [
         {
             "id": 1,
-            "tag": "모바일게임"
+            "tagName": "포토샵"
+        },
+        {
+            "id": 3,
+            "tagName": "피그마"
         }
     ],
     "images": ["base64 encoded string"],
@@ -83,22 +87,22 @@ GET
     "commentsNum": 2,
     "comments": [
         {
-            "createdDate": "2021-01-08T17:04:01",
-            "modifiedDate": "2021-01-08T17:04:10",
             "id": 26,
             "content": "comment example",
+            "createdDate": "2021-01-08T17:04:01",
+            "modifiedDate": "2021-01-08T17:04:10",
             "user": {
                 "id": 12,
-                "email": "example2@ewhain.net",
                 "username": "­이화연",
+                "email": "example2@ewhain.net",
                 "image": "https://example2/photo.jpg",
             }
         },
         {
-            "createdDate": "2021-01-08T19:04:01",
-            "modifiedDate": "2021-01-08T20:24:10",
             "id": 27,
             "content": "comment example2",
+            "createdDate": "2021-01-08T19:04:01",
+            "modifiedDate": "2021-01-08T20:24:10",
             "user": {
                 "id": 12,
                 "email": "example2@ewhain.net",
@@ -110,7 +114,7 @@ GET
 }
 ```
 
-#### fail
+### fail
 
 **HTTP Status code : 400 Bad Request**
 
@@ -127,3 +131,9 @@ GET
     "message": "존재하지 않는 포트폴리오입니다. "
 }
 ```
+
+| name    | type   | description                                                  |
+| ------- | ------ | ------------------------------------------------------------ |
+| status  | number | HTTP status code(에러 상황에 따라 변할 수 있습니다. )        |
+| message | string | 에러 메시지(메시지 내용은 에러 상황에 따라 변할 수 있습니다. ) |
+
