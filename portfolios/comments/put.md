@@ -13,10 +13,10 @@ PUT
 ## URL
 
 ```text
-/portfolios/:id/comments/:commentId
+/portfolios/:portfolioId/comments/:commentId
 ```
 
-* id: 해당 댓글이 작성된 \(프로젝트 페이지의\) 게시물 고유 id
+* portfolioId: 해당 댓글이 작성된 \(포트폴리오 페이지의\) 게시물 고유 id
 * commentId: 수정할 댓글의 고유 id
 
 ## REQUEST BODY
