@@ -13,7 +13,7 @@ PATCH
 ## URL
 
 ```text
-/projects/image/:id
+/portfolios/image/:id
 ```
 
 * id: [포트폴리오 상제 페이지](./get.md)의 리턴값에서 알아낼 수 있는 포트폴리오 이미지의 고유 id
