@@ -50,7 +50,7 @@ PUT
 ```json
 {
     "status": 400,
-    "message": "필수항목을 입력해주세요. "
+    "message": "잘못된 경로로 접근했습니다. "
 }
 ```
 ```json
