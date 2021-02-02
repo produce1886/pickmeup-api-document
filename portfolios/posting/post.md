@@ -25,8 +25,8 @@ POST
 | content          | string        | 필수                                | 게시물 내용               |
 | category         | string        | 필수                                | 카테고리                  |
 | recruitmentField | string        | 필수                                | 구인분야                  |
-| portfolioTags    | String  배열, | 필수, 값이 없으면 빈 리스트로(`[]`) | 포트폴리오 태그, 최대 5개 |
-| image            | string(URI)   | 선택                                | 포트폴리오 이미지 경로    |
+| portfolioTags    | String  배열 | 필수, 값이 없으면 빈 리스트로(`[]`) | 포트폴리오 태그 |
+| images           | string(URI) 배열  | 선택                                | 포트폴리오 이미지 URI 경로    |
 
 해당 리퀘스트의 바디로 보내는 이름, 이메일, 이미지는 소셜 로그인 api에서 제공하는 정보입니다. 현재는 구글 로그인만 사용하니 해당 사용자의 구글 계정에 설정한 이름, 이메일, 프로필 이미지가 되겠습니다.
 
@@ -40,7 +40,7 @@ POST
         "category": "웹",
         "recruitmentField": "디자인",
         "portfolioTags": ["포토샵", "제플린"],
-        "image": "image uri"
+        "images": ["image uri", "uri2"]
 }
 ```
 

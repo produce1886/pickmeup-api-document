@@ -30,6 +30,10 @@ GET
   * tag
     * id: 태그 id \(number\)
     * tagName: 태그 내용 \(string\)
+* images: 포트폴리오 이미지 (image 배열)
+  * image
+    * id: 이미지 id (number)
+    * image: 이미지 URI 경로 (string)
 * createdDate: 게시물 작성 날짜 \(string / DATETIME\)
 * modifiedDate: 게시물 수정 날짜 \(string / DATETIME\)
 * user: 게시물 작성자 정보\(object\)
@@ -74,7 +78,16 @@ GET
             "tagName": "피그마"
         }
     ],
-    "images": ["base64 encoded string"],
+    "images": [
+        {
+            "id": 1,
+            "image": "image uri"
+        },
+        {
+            "id": 3,
+            "image": "uri2"
+        }
+    ],
     "createdDate": "2021-01-07T14:49:52",
     "modifiedDate": "2021-01-08T14:05:43",
     "user": {

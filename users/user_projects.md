@@ -82,7 +82,7 @@ GET
             "recruitmentField": "개발",
             "region": "부산",
             "projectSection": "창업",
-            "projectTag": [
+            "projectTags": [
                 {
                     "id": 1,
                     "tagName": "리액트"
