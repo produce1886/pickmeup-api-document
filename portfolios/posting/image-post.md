@@ -13,7 +13,7 @@ POST
 ## URL
 
 ```text
-/projects/:id/image
+/portfolios/:id/image
 ```
 
 * id: 포트폴리오 페이지의 읽으려는 게시물 고유 id
