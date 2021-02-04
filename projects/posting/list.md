@@ -22,6 +22,10 @@ GET
 GET /projects/list?page=0&size=10&sort=viewNum,desc&region=서울&projectSection=창업
 ```
 
+> 프로젝트 게시물 중 region이 서울로 되어 있는 게시들 중 "창업" 검색어를 적용한 검색 결과를 조회 순이 많은 순으로
+> 정렬하여 10개 중 첫번째 페이지를 가져옵니다. 
+
+
 ## QUERY STRING
 
 |name|type|require|description
@@ -43,7 +47,7 @@ GET /projects/list?page=0&size=10&sort=viewNum,desc&region=서울&projectSection
 
 ## RESPONSE
 
-* totalNum: 프로젝트 게시글 총 개수 \(number\)
+* totalNum: 조건에 만족하는 프로젝트 게시글 총 개수 \(number\)
 * projectList: 프로젝트 게시글 리스트 \(project 배열\)
   * project
     * id: 게시물 고유 id \(number\)
