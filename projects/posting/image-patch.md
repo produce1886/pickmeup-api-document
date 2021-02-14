@@ -2,7 +2,7 @@
 description: 해당 id를 가진 프로젝트의 이미지를 바꾸는 API입니다. 
 ---
 
-# 게시물 이미지 수정/삭제
+# 게시물 이미지 수정
 
 ## METHOD
 
@@ -28,15 +28,10 @@ PATCH
 
 ## RESPONSE
 ### success
-#### 프로젝트 이미지 수정
 **HTTP Status code : 201 Created**
 > Response Body는 따로 없습니다.  
 > 대신, Http Location **헤더**에 생성된 자원의 경로를 붙여서 반환합니다.  
 > 또한, [프로젝트 게시물 정보 불러오기 API](./get.md)를 다시 한 번 호출하면, 바뀐 이미지 경로를 확인할 수 있습니다.
-
-#### 프로젝트 이미지 삭제
-**HTTP Status code : 204 No Content**
-> Response Body는 따로 없습니다.  
 
 ### fail
 **HTTP Status code : 400 Bad Request or 500 Internal Server Error**
@@ -45,6 +40,13 @@ PATCH
 {
     "status": 400,
     "message": "존재하지 않는 프로젝트입니다. "
+}
+```
+
+```json
+{
+    "status": 400,
+    "message": "필수항목을 입력해주세요. "
 }
 ```
 
