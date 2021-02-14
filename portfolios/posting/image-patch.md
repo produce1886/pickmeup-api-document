@@ -24,7 +24,6 @@ PATCH
 |---|---|---|---|
 |image|multipart/form-data|필수|변경할 프로젝트 이미지|
 > 현재 저장가능한 이미지로 `.jpg`, `.jpeg`, `.gif`, `.png`, `.img`, `.tiff`, `.heif` 확장자만 지원합니다.  
-> `image`로 아무 값도 전달하지 않을 경우 유저 프로젝트 이미지를 삭제하는 것으로 간주합니다. 
 
 ## RESPONSE
 ### success  
@@ -42,7 +41,6 @@ PATCH
     "message": "존재하지 않는 이미지입니다. "
 }
 ```
-
 
 ```json
 {
