@@ -28,7 +28,7 @@ description: 픽미업 프로젝트의 API문서입니다
 
 ### portfolios
 
-* [게시물](portfolios/posting/)
+* [게시물](portfolios/posting)
   * [게시물 생성](portfolios/posting/post.md)
   * [게시물 읽기](portfolios/posting/get.md)
   * [게시물 이미지 추가](portfolios/posting/image-post.md)
@@ -37,7 +37,7 @@ description: 픽미업 프로젝트의 API문서입니다
   * [게시물 삭제](portfolios/posting/delete.md)
   * [게시물 이미지 삭제](portfolios/posting/image-delete.md)
   * [게시물 목록 불러오기](portfolios/posting/list.md)
-* [댓글](portfolios/comments/)
+* [댓글](portfolios/comments)
   * [댓글 생성](portfolios/comments/post.md)
   * [댓글 읽기](portfolios/comments/get.md)
   * [댓글 수정](portfolios/comments/put.md)

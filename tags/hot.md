@@ -20,26 +20,34 @@ GET
 
 * tags: 태그 목록 \(tag 배열\)
   * tag
-    * id: tag 아이디 \(number\)
-    * tag: 내용 \(string\)
+    * id: 태그 id \(number\)
+    * tagName: 태그 내용 \(string\)
 
 ### RESPONSE EXAMPLE
 
-```markup
+### success
+
+**HTTP Status code : 200 OK**
+
+```json
 {
     "tags": [
         {
             "id": 1,
-            "tag": "모바일게임"
+            "tagName": "모바일게임"
         },
         {
             "id": 2,
-            "tag": "리액트"
+            "tagName": "리액트"
         },
-        ... // 이후 8개 같은 방식으로 반
+        ... // 이후 8개 같은 방식으로 반복
     ]
 }
 ```
+
+### fail
+
+**HTTP Status code : 500 Internal Server Error**
 
 
 
