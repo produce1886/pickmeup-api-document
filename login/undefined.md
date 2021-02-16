@@ -15,7 +15,7 @@ BODY의 email을 기준으로 사용자 테이블에서 해당 사용자를 찾�
 
   이 경우 픽미업 데이터베이스에 저장된 username, image의 값과 REQUEST BODY의 username, image값이 다르더라도 무시하고
   픽미업 데이터베이스에 저장된 값을 응답으로 반환합니다. 값을 변경하고 싶으면 [유저 정보 수정하기](../users/put.md)나 
-  [유저 프로필 이미지 수정하기](../users/update-profile-image.md)를 참고해 주세요.
+  [유저 프로필 이미지 수정하기](../users/image-patch.md)를 참고해 주세요.
 
 {% hint style="info" %}
 픽미업 서비스 자체에서 사용자가 원하는 닉네임과 프로필 이미지를 변경할 수 있기 때문에 신규 가입이 아닌 경우 데이터베이스의 내용을 수정하지 않습니다
