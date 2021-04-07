@@ -51,8 +51,8 @@ GET /portfolios/list?page=0&size=10&sort=viewNum,desc&recruitmentField=개발&ke
     * id: 게시물 고유 id \(number\)
     * title: 게시물 제목 \(string\)
     * content: 게시물 내용 \(string\)
-    * image: 이미지 배열 중 첫번째 이미지 \(base64 encoded string / BLOB\)
-      * 이미지가 아예 없는 경우 ""\(빈 문자열\) 보
+    * firstImage: 이미지 배열 중 첫번째 이미지 \(string\)
+      * 이미지가 아예 없는 경우 `""`\(빈 문자열\) 보냄
     * category: 카테고리 \(string\) 
     * recruitmentField: 구인분야 \(string\)
     * portfolioTags: 포트폴리오 태그 \(tag 배열\)
@@ -71,6 +71,7 @@ GET /portfolios/list?page=0&size=10&sort=viewNum,desc&recruitmentField=개발&ke
 
 ### RESPONSE EXAMPLE
 
+### success
 ```json
 {
     "totalNum": 162,
@@ -79,7 +80,7 @@ GET /portfolios/list?page=0&size=10&sort=viewNum,desc&recruitmentField=개발&ke
             "id": 123,
             "title": "리액트",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit.",
-            "image": "",
+            "firstImage": "",
             "category": "게임",
             "recruitmentField": "개발",
             "portfolioTag": [],
@@ -98,7 +99,7 @@ GET /portfolios/list?page=0&size=10&sort=viewNum,desc&recruitmentField=개발&ke
             "id": 124,
             "title": "example2",
             "content": "PICK ME UP PLEASE 리액트",
-            "image": "base64 encoded image",
+            "firstImage": "https://example/portfolio-photo.png",
             "category": "웹",
             "recruitmentField": "개발",
             "portfolioTag": [

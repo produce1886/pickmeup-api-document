@@ -26,6 +26,8 @@ GET
     * id: 게시물 고유 id \(number\)
     * title: 게시물 제목 \(string\)
     * content: 게시물 내용 \(string\)
+    * firstImage: 이미지 배열 중 첫번째 이미지 \(string\)
+      * 이미지가 아예 없는 경우 `""`\(빈 문자열\) 보냄
     * category: 카테고리 \(string\) 
     * recruitmentField: 구인분야 \(string\)
     * region: 지역 \(string\)
@@ -57,6 +59,7 @@ GET
             "id": 1,
             "title": "example",
             "content": "주요내용",
+            "firstImage": "",
             "category": "웹",
             "recruitmentField": "기획",
             "createdDate": "2021-01-23T04:34:35",
@@ -84,6 +87,7 @@ GET
             "id": 2,
             "title": "example2",
             "content": "주요 내용2",
+            "firstImage": "https://example/portfolio-photo.png",
             "category": "게임",
             "recruitmentField": "개발",
             "createdDate": "2021-01-23T04:49:11",
